@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<title>AirPollution Analysis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-left" style="width:100px"></span>
+  <span class="w3-bar-item w3-center" style="width:1200px"><marquee direction="left">Indian Institute of Remote Sensing, ISRO, Air Pollution Analysis Portal</marquee></span>
+  <span class="w3-bar-item w3-right"><img src="pics/isro.jpg" style = "width:46px"></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <!--<img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px"> -->
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span><img src= "E:/Important_files/CollegeWorld/IIRS_Dehradun/Semester 1/Module 3/PilotProject3-2a/pilotProject/mainsite/templates/mainsite/pics/iirs.jpg" class = "img-rounded" style="width:190px;height:190px;padding:0px" align="middle" sizes=1px></span><br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h3 style="text-align:center"><b><i class="fa fa-dashboard"></i> My Dashboard</b></h3>
+  </header>
+<br><br>
+
+
+<div class="container">
+  <h2>AOD Graphical Analysis</h2>
+  <p>The AOD Comparision has been made between the year 2017,2018,2019,2020 accross the different citites for the Air Pollution Analysus During Lockdown</p>
+  <p>Please select any city for the visual graphs</p>
+  <form>
+    <div class="form-group" align="center">
+      <label for="sel1" align="center" >Cities</label>
+      <select class="form-control" id="city">
+        <option>Choose any city</option>
+        <option align="middle">Chennai</option>
+        <option>Delhi</option>
+        <option>Kolkata</option>
+        <option>Mumbai</option>
+      </select>
+    </div>
+  </form>
+  
+  <button class="btn btn-primary" onclick="getgraph();">  Get Graph</button>
+</div>
+
+
+
+
+  <div  class="w3-container" >
+  
+          <img src= "E:/Important_files/CollegeWorld/IIRS_Dehradun/Semester 1/Module 3/PilotProject3-2a/pilotProject/mainsite/templates/mainsite/pics/ana.png" id = "graph" class = "img-rounded center" style="width:50%;height:50%;padding:0px;display:block;margin-left:auto;margin-right:auto" sizes=1px>
+
+  </div>
+  <hr>
+
+  <div class="w3-container">
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-black">
+    <h4 style="text-align:center">Designed and Developed by-</h4>
+    <p style="text-align:center"><a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Harshal Mittal</a></p>
+    <p style="text-align:center"><a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Srishti Pandey</a></p>
+    <p style="text-align:center"><a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Anushree Jain</a></p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+
+
+function getgraph(){
+
+  var r = document.getElementById("city");
+  var result = r.options[r.selectedIndex].text;
+  //document.getElementById("graph").innerHTML = "hello";
+  
+  switch (result) {
+  case "Delhi":
+       document.getElementById("graph").src = "E:/Important_files/CollegeWorld/IIRS_Dehradun/Semester 1/Module 3/PilotProject3-2a/pilotProject/mainsite/templates/mainsite/pics/aod/Delhi_AOD.png";
+       break;
+  case "Mumbai":
+    document.getElementById("graph").src = "E:/Important_files/CollegeWorld/IIRS_Dehradun/Semester 1/Module 3/PilotProject3-2a/pilotProject/mainsite/templates/mainsite/pics/aod/Mumbai_AOD.png";
+    break;
+  case "Kolkata":
+    document.getElementById("graph").src = "E:/Important_files/CollegeWorld/IIRS_Dehradun/Semester 1/Module 3/PilotProject3-2a/pilotProject/mainsite/templates/mainsite/pics/aod/Kolkata_AOD.png";
+    break;
+  case "Chennai":
+    document.getElementById("graph").src = "E:/Important_files/CollegeWorld/IIRS_Dehradun/Semester 1/Module 3/PilotProject3-2a/pilotProject/mainsite/templates/mainsite/pics/aod/Chennai_AOD.png";
+    break;
+  default:
+    document.getElementById("graph").innerHTML = result;
+}
+
+}
+
+
+
+
+
+
+
+
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
