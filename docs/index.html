@@ -54,14 +54,21 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-    <h3 style="text-align:center"><b><i class="fa fa-dashboard"></i> My Dashboard</b></h3>
+    <h3 style="text-align:center"><b><img src = "pics/isro_wout_b.png" style="width:100px"/></b></h3>
   </header>
 <br><br>
 
 
 <div class="container">
+  <h2>Introduction to Aerosol Optical Depth (AOD):- </h2>
+  <p>Tiny solid and liquid particles suspended in the atmosphere are called aerosols. Examples of aerosols include windblown dust, sea salts, volcanic ash, smoke from fires, and pollution from factories. These particles block sunlight, hence can be measured with a parameter called Aerosol optical depth. AOD is a seasonal parameter that changes according to the level of water vapour and dust in the atmosphere, however the level of AOD can significantly increase when there are pollutants in the air.
+  </p>
+  <h3>Interlation with Lockdown:- </h3>
+  <p>Because of industrial and human activities the AOD levels are pretty high in the four major cities in India. However because of lockdown, there are some drastic lows in AOD hence proving the fact that the air around us has become much less polluted. <br><br>To analyse this situation, <b>550nm MODIS Terra AOD(8 days)</b> was taken into account for cities <b>Delhi, Mumbai , Chennai and kolkata</b> for <b>years 2017,2018,2019 and 2020</b> in the month of <b>march and april</b> and the graph hence plotted showed the drastic decrease in the level of AOD.
+<br><br><b>The value of AOD is measured between 0-1, where 0 depicts a clear atmosphere while 1 depicts the most polluted air.</b>
+</p>
+    <br>
   <h2>AOD Graphical Analysis</h2>
-  <p>The AOD Comparision has been made between the year 2017,2018,2019,2020 accross the different citites for the Air Pollution Analysus During Lockdown</p>
   <p>Please select any city for the visual graphs</p>
   <form>
     <div class="form-group" align="center">
@@ -84,8 +91,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <div  class="w3-container" >
   
-          <img src= "pics/ana.png" id = "graph" class = "img-rounded center" style="width:50%;height:50%;padding:0px;display:block;margin-left:auto;margin-right:auto" sizes=1px>
+           <img src= "pics/ana.png" id = "graph" class = "img-rounded center" style="width:50%;height:50%;padding:0px;display:block;margin-left:auto;margin-right:auto" sizes=1px>
 
+
+          <h2 style = "text-align:center;visibility:hidden" id="head">Analysis:- </h2>
+
+          <b><h4 id = "analysis" class="text-info" style="text-align:center"></h4></b>
   </div>
   <hr>
 
@@ -115,6 +126,8 @@ function getgraph(){
   switch (result) {
   case "Delhi":
        document.getElementById("graph").src = "pics/aod/Delhi_AOD.png";
+       document.getElementById("head").style.visibility = "visible";
+       document.getElementById("analysis").innerHTML = "There is a clear dip in the value of AOD for the period 30 March- 14 April, the further increase in the AOD values is because of summer dust and burning of the farm fields. and the rise in the last week is maybe because of the thunderstorm warning in that period. Also the thermal power plants near delhi have not stopped their electricity production."
        break;
   case "Mumbai":
     document.getElementById("graph").src = "pics/aod/Mumbai_AOD.png";
