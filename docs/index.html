@@ -134,9 +134,13 @@ function getgraph(){
     break;
   case "Kolkata":
     document.getElementById("graph").src = "pics/aod/Kolkata_AOD.png";
+    document.getElementById("head").style.visibility = "visible";
+    document.getElementById("analysis").innerHTML = "There is a clear dip in the value of AOD for the period 21 March- 6 April, Maybe the lockdown would have started much earlier in this city. The further increase in the AOD values is because of summer dust and burning of the farm fields. and the rise in the last week is maybe because of the thunderstorm warning in that period."
     break;
   case "Chennai":
     document.getElementById("graph").src = "pics/aod/Chennai_AOD.png";
+    document.getElementById("head").style.visibility = "visible";
+    document.getElementById("analysis").innerHTML = "There is a clear dip in the value of AOD for the period 7 April- 30 April, the further increase in the AOD values is because of summer dust and burning of the farm fields. and the rise in the last week is maybe because of the thunderstorm warning in that period."
     break;
   default:
     document.getElementById("graph").src = "pics/ana.png";
